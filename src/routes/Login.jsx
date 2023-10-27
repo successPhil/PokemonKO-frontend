@@ -1,5 +1,5 @@
 import { signupAxios, loginAxios } from "../api/authApi";
-import SignIn from "../muiComponents/SignIn";
+import SignIn from "../features/Login/SignIn";
 import { Navigate } from 'react-router-dom';
 
 

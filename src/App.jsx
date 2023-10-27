@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Login from "./routes/Login"
 import Trainer from './routes/Trainer'
-import ResponsiveAppBar from "./muiComponents/AppBar"
+import ResponsiveAppBar from "./features/AppBar/AppBar"
 import TrainerPokes from "./routes/TrainerPokes"
 import Shop from "./routes/Shop"
 import Items from "./routes/Items"
 import TrainerContext from "./contexts/TrainerContext"
 import { useState, useEffect } from "react"
-import AppTheme from './muiComponents/AppTheme.jsx'
+import AppTheme from "./features/AppBar/AppTheme"
 import { ThemeProvider } from "@emotion/react"
 import { CssBaseline } from "@mui/material"
 import { getTrainerItems, getTrainerPokemon, getTrainer, getTrainerShop, getGamePokemon } from "./api/authApi"

@@ -1,13 +1,13 @@
-import GameMenu from "../components/GameMenu"
-import GameDialogue from "../components/GameDialogue"
-import PlayerData from "../components/PlayerData"
-import EnemyData from "../components/EnemyData"
-import MovesList from "../components/MovesList"
-import GetEnemyButton from "../components/GetEnemyButton"
-import RewardBox from "../components/RewardBox"
+import GameMenu from "../features/FightMenu/GameMenu"
+import GameDialogue from "../features/Dialogue/GameDialogue"
+import PlayerData from "../features/Player/PlayerData"
+import EnemyData from "../features/Enemy/EnemyData"
+import MovesList from "../features/Player/MovesList"
+import GetEnemyButton from "../features/Player/GetEnemyButton"
+import RewardBox from "../features/Dialogue/RewardBox"
 import TrainerContext from "../contexts/TrainerContext"
 import { useContext, useState, useEffect } from "react"
-import { capitalizeFirst } from "../components/EnemyData"
+import { capitalizeFirst } from "../features/Enemy/EnemyData"
 import { updateBattleResults, getEnemyPokemon, replenishShop } from "../api/authApi"
 
 
@@ -152,11 +152,9 @@ export default function Trainer(){
     const {pokemonBonus, moveBonus } = calculateType(selectPokemon, move, enemyPokemon) //Order matters - attacking poke, move being used, defending poke
     const bonus = pokemonBonus * moveBonus
     const basePokemonDamage = Math.ceil(1.8 * selectPokemon.power * pokemonBonus)
-    console.log(basePokemonDamage, 'BASE PLAYER DAMAGE')
     const baseMoveDamage = Math.floor((move.damage * moveBonus * randomMultiplier))
     const baseDamage = basePokemonDamage + baseMoveDamage
     const baseDefense = Math.ceil((enemyPokemon.power / 5) + enemyPokemon.defense)
-    console.log(baseDefense, 'BASE ENEMY DEFENSE')
     let damage = 1
     if (baseDamage < baseDefense){
         damage = baseDamage
@@ -264,7 +262,6 @@ export default function Trainer(){
 
     return (
         <>
-        <button onClick={()=> testAttack(enemyPokemon, selectPokemon)}>MO TESTIN</button>
         {showRewards && 
         <div onClick={hideRewards}>
           <RewardBox text={rewardDialogue}/>

@@ -1,14 +1,13 @@
 import { useEffect, useContext, useState } from 'react';
 import TrainerContext from '../contexts/TrainerContext';
 import { getTrainerPokemon, getFirstPokemon } from '../api/authApi';
-import PokeCard from '../muiComponents/PokeCard';
+import PokeCard from '../features/PokeCards/PokeCard';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container'
 import Button from '@mui/material/Button';
 import Select from '@mui/material/Select';
 import { InputLabel, MenuItem, FormControl } from '@mui/material';
-import { capitalizeFirst } from '../components/EnemyData';
-
+import { capitalizeFirst } from '../features/Enemy/EnemyData';
 export default function TrainerPokes(){
 
     const token = localStorage.getItem('token')

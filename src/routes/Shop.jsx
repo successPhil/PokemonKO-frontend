@@ -8,7 +8,7 @@ import { getTrainer, getTrainerShop } from "../api/authApi"
 import GameText from "../styles/PokemonGB"
 import { useState } from "react"
 import Button from "@mui/material/Button"
-import TrainerShopCard from "../muiComponents/TrainerShopCard"
+import TrainerShopCard from "../features/ItemCards/TrainerShopCard"
 
 
 

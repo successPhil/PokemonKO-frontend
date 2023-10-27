@@ -1,7 +1,7 @@
 import { getTrainerItems, updateItems } from "../api/authApi"
 import TrainerContext from "../contexts/TrainerContext"
 import { useContext, useEffect, useState } from "react"
-import TrainerItemsCard from "../muiComponents/TrainerItemsCard"
+import TrainerItemsCard from "../features/ItemCards/TrainerItemsCard"
 import Container from "@mui/material/Container"
 import Grid from "@mui/material/Grid"
 
